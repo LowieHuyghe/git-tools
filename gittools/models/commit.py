@@ -12,11 +12,13 @@ class Commit(object):
         :return:        List of Commit's
         """
 
+        command = 'git log -n %i --pretty=format:"%%H | \%%h | %%ai | %%an <%%ae> | %%s"' % limit
+
         current_script = BaseScript.current_script()
-        output = current_script.execute('git log -n %i --pretty=format:"%%H | \%%h | %%ai | %%an <%%ae> | %%s"' % limit)
+        out, err, exitcode = current_script.execute(command)
 
         commits = []
-        for line in output:
+        for line in out:
             parts = line.split(' | ')
 
             commits.append(Commit(parts[0], parts[1], parts[3], parts[4], parts[2]))
@@ -32,11 +34,13 @@ class Commit(object):
         :return:        List of Commit's
         """
 
+        command = 'git log -n %i %s --pretty=format:"%%H | \%%h | %%ai | %%an <%%ae> | %%s"' % (limit, where)
+
         current_script = BaseScript.current_script()
-        output = current_script.execute('git log -n %i %s --pretty=format:"%%H | \%%h | %%ai | %%an <%%ae> | %%s"' % (limit, where))
+        out, err, exitcode = current_script.execute(command)
 
         commits = []
-        for line in output:
+        for line in out:
             parts = line.split(' | ')
 
             commits.append(Commit(parts[0], parts[1], parts[3], parts[4], parts[2]))

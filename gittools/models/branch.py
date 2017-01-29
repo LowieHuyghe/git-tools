@@ -13,10 +13,10 @@ class Branch(object):
         """
 
         current_script = BaseScript.current_script()
-        output = current_script.execute('git branch')
+        out, err, exitcode = current_script.execute('git branch')
 
         branches = []
-        for line in output:
+        for line in out:
             match = re.match('^(\*?)\s*(.+)$', line)
 
             name = match.group(2)
