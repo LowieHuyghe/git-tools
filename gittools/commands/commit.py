@@ -18,12 +18,10 @@ class Commit(CuiScript):
 
         self._register_option('m', 'Commit message')
 
-    def run(self):
+    def _run(self):
         """
-        Run the script
+        Actually run the script
         """
-
-        self._analyze_arguments()
 
         if self._has_option('m'):
             message = self._get_option('m')
