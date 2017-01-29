@@ -33,5 +33,6 @@ class Commit(CuiScript):
         if not message:
             self.output('No message specified', 'error')
         else:
+            message.replace('"', "'")
             self.execute('git commit -m "%s"' % message)
             self.execute('git rev-parse HEAD | pbcopy')
