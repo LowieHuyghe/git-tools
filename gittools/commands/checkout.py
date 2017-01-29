@@ -17,12 +17,10 @@ class Checkout(CuiScript):
 
         super(Checkout, self).__init__(base_path, title, description, arguments=arguments)
 
-    def run(self):
+    def _run(self):
         """
-        Run the script
+        Actually run the script
         """
-
-        self._analyze_arguments()
 
         branches = Branch.all()
         branches.sort(key=lambda branch: branch.name)
