@@ -1,5 +1,5 @@
 
-from scriptcore.console.cuiscript import CuiScript
+from scriptcore.cuiscript import CuiScript
 from gittools.commands.checkout import Checkout
 from gittools.commands.commit import Commit
 from gittools.commands.show import Show
