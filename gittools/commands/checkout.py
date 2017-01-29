@@ -22,6 +22,8 @@ class Checkout(CuiScript):
         Run the script
         """
 
+        self._analyze_arguments()
+
         branches = Branch.all()
         branches.sort(key=lambda branch: branch.name)
         branch_names = []
