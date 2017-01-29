@@ -1,5 +1,5 @@
 
-from scriptcore.console.basescript import BaseScript
+from scriptcore.basescript import BaseScript
 import re
 
 

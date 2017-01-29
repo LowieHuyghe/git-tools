@@ -1,5 +1,5 @@
 
-from scriptcore.console.cuiscript import CuiScript
+from scriptcore.cuiscript import CuiScript
 
 
 class Commit(CuiScript):
