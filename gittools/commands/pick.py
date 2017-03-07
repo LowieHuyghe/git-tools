@@ -57,3 +57,4 @@ class Pick(CuiScript):
             self.output('Copied to clipboard', 'success')
         else:
             self.output('No commit to show', 'error')
+            exit(1)
