@@ -56,3 +56,4 @@ class Show(CuiScript):
             self.execute('git show %s' % commit.full_hash)
         else:
             self.output('No commit to show', 'error')
+            exit(1)

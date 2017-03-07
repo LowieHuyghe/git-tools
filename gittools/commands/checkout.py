@@ -38,3 +38,4 @@ class Checkout(CuiScript):
             self.execute('git checkout %s' % branches[index].name)
         else:
             self.output('Invalid input given', 'error')
+            exit(1)

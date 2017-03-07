@@ -30,6 +30,7 @@ class Commit(CuiScript):
 
         if not message:
             self.output('No message specified', 'error')
+            exit(1)
         else:
             message.replace('"', "'")
             self.execute('git commit -m "%s"' % message)
