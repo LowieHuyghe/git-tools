@@ -32,6 +32,5 @@ class Commit(CuiScript):
             self.output('No message specified', 'error')
             exit(1)
         else:
-            message.replace('"', "'")
-            self.execute('git commit -m "%s"' % message)
-            self.execute('git rev-parse HEAD | pbcopy')
+            message = message.replace('"', '\\"')
+            self.execute('git commit -m "%s" && git rev-parse HEAD | pbcopy' % message)
