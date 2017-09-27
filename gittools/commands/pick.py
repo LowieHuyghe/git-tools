@@ -53,7 +53,7 @@ class Pick(CuiScript):
 
         # Pick commit
         if commit:
-            self.execute('echo "*%s* _%s_" | pbcopy' % (commit.full_hash, commit.message))
+            self.execute('echo "\` %s \` _%s_" | pbcopy' % (commit.full_hash, commit.message))
             self.output('Copied to clipboard', 'success')
         else:
             self.output('No commit to show', 'error')
