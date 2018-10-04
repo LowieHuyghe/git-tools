@@ -93,3 +93,6 @@ ENV/
 
 # Config
 config.ini
+
+# IDE
+.idea
