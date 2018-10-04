@@ -15,18 +15,20 @@ git clone git@github.com:LowieHuyghe/git-tools.git
  ```bash
 cd git-tools
 ```
-3. Setup virtualenv and activate it
-4. Install the requirements:
+3. Install the requirements:
 
  ```bash
-pip install -r requirements.txt
+npm install
+```
+4. Compile:
+
+ ```bash
+npm run compile
 ```
 
 
 ## Run
 
  ```bash
-python git.py
+node dist/index.js
 ```
-
-> Note: Make sure your virtualenv is active when running the script.
